@@ -14,14 +14,7 @@
 //  打开系统设置
 + (void)openPrefsURL:(NSString *)openURL
 {
-    NSURL *url;
-    
-    if (over_iOS10) {
-        url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-    }
-    else{
-        url = [NSURL URLWithString:openURL];
-    }
+    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
